@@ -30,13 +30,13 @@ export default function Kenangan() {
             }
         };
     }, []);
-    
+
 
     return (
         <div className="bg-neutral-900 text-white h-screen w-full overflow-x-hidden relative flex flex-col">
             {/* Navbar kecil saat discroll */}
             <div
-                className={`absolute top-0 left-0 w-full bg-gradient-to-r from-neutral-500 to-neutral-300 backdrop-blur-md shadow-md transition-all duration-300 ${showSmallNav ? "translate-y-0 opacity-100" : "-translate-y-full opacity-0"
+                className={`absolute top-0 left-0 w-full bg-gradient-to-r from-pink-700 to-pink-500 backdrop-blur-md shadow-md transition-all duration-500 ${showSmallNav ? "translate-y-0 opacity-100" : "-translate-y-full opacity-0"
                     } z-50`}
             >
                 <div className="w-full h-18 flex items-center justify-center px-6 py-3">
@@ -68,28 +68,55 @@ export default function Kenangan() {
                 </header>
 
                 {/* GALERI */}
-                <main className="max-w-5xl mx-auto p-6">
-                    <div className="flex flex-wrap justify-center gap-4">
-                        {[...Array(8)].map((_, i) => (
-                            <motion.div
-                                key={i}
-                                initial={{ opacity: 0, scale: 0.9 }}
-                                whileInView={{ opacity: 1, scale: 1 }}
-                                transition={{ duration: 0.6, delay: 0 }}
-                                viewport={{ once: false, amount: 0.2 }}
-                                className="relative w-[calc(50%-0.5rem)] sm:w-[calc(33.333%-0.5rem)] md:w-[calc(25%-0.5rem)] aspect-square overflow-hidden rounded-2xl shadow-lg group"
-                            >
-                                <img
-                                    src={`image/foto${i + 1}.jpeg`}
-                                    alt={`Foto ${i + 1}`}
-                                    className="w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-110"
-                                />
-                                <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 flex items-center justify-center text-white text-sm raleway font-medium transition-opacity duration-300">
-                                    Klik untuk buka
-                                </div>
-                            </motion.div>
-                        ))}
-                    </div>
+                <main className="max-w-5xl mx-auto p-6 flex flex-col gap-10">
+                    <section>
+                        <h1 className=" text-xl mb-1.5 text-center">2022</h1>
+                        <div className="flex flex-wrap justify-center gap-4">
+                            {[...Array(8)].map((_, i) => (
+                                <motion.div
+                                    key={i}
+                                    initial={{ opacity: 0, scale: 0.9 }}
+                                    whileInView={{ opacity: 1, scale: 1 }}
+                                    transition={{ duration: 0.8, delay: 0 }}
+                                    viewport={{ once: true, amount: 0.2 }}
+                                    className="relative w-[calc(50%-0.5rem)] sm:w-[calc(33.333%-0.5rem)] md:w-[calc(25%-0.5rem)] aspect-square overflow-hidden rounded-2xl shadow-lg group"
+                                >
+                                    <img
+                                        src={`image/foto${i + 1}.jpeg`}
+                                        alt={`Foto ${i + 1}`}
+                                        className="w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-110"
+                                    />
+                                    <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 flex items-center justify-center text-white text-sm raleway font-medium transition-opacity duration-300">
+                                        Klik untuk buka
+                                    </div>
+                                </motion.div>
+                            ))}
+                        </div>
+                    </section>
+                    <section>
+                        <h1 className=" text-xl mb-1.5 text-center">2023</h1>
+                        <div className="flex flex-wrap justify-center gap-4">
+                            {[...Array(8)].map((_, i) => (
+                                <motion.div
+                                    key={i}
+                                    initial={{ opacity: 0, scale: 0.9 }}
+                                    whileInView={{ opacity: 1, scale: 1 }}
+                                    transition={{ duration: 0.8, delay: 0 }}
+                                    viewport={{ once: true, amount: 0.2 }}
+                                    className="relative w-[calc(50%-0.5rem)] sm:w-[calc(33.333%-0.5rem)] md:w-[calc(25%-0.5rem)] aspect-square overflow-hidden rounded-2xl shadow-lg group"
+                                >
+                                    <img
+                                        src={`image/foto${i + 1}.jpeg`}
+                                        alt={`Foto ${i + 1}`}
+                                        className="w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-110"
+                                    />
+                                    <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 flex items-center justify-center text-white text-sm raleway font-medium transition-opacity duration-300">
+                                        Klik untuk buka
+                                    </div>
+                                </motion.div>
+                            ))}
+                        </div>
+                    </section>
                 </main>
 
             </div>

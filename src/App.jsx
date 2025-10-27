@@ -20,32 +20,37 @@ function App() {
   const [secretMode, setSecretMode] = useState(false);
   const [templateIndex, setTemplateIndex] = useState(0);
 
-  const handlePetitionKeyDown = (e) => {
-    if (e.key.length === 1) {
-      if (e.key === ".") {
-        e.preventDefault();
+  const handlePetitionInput = (e) => {
+    const value = e.target.value;
+    const lastChar = value.slice(-1);
 
-        if (!secretMode) {
-          setSecretMode(true);
-          setSecretAnswer("");
-          setTemplateIndex(0);
-          setPetition("");
-        } else {
-          setSecretMode(false);
-          setPetition(petitionTemplate.substring(0, templateIndex));
-        }
-      } else if (secretMode) {
-        e.preventDefault();
-
-        setSecretAnswer((prev) => prev + e.key);
-
-        if (templateIndex < petitionTemplate.length) {
-          setPetition((prev) => prev + petitionTemplate[templateIndex]);
-          setTemplateIndex((prev) => prev + 1);
-        }
+    if (lastChar === ".") {
+      if (!secretMode) {
+        // TITIK PERTAMA → masuk mode rahasia
+        e.target.value = ""; // kosongkan input supaya rahasia
+        setPetition("");
+        setSecretMode(true);
+        setSecretAnswer("");
+        setTemplateIndex(0);
+      } else {
+        // TITIK KEDUA → keluar dari mode rahasia
+        setSecretMode(false);
+        // tampilkan kembali template yang terakhir ditulis
+        setPetition(petitionTemplate.substring(0, templateIndex));
       }
+    } else if (secretMode) {
+      // selama mode rahasia aktif
+      setSecretAnswer((prev) => prev + lastChar);
+      if (templateIndex < petitionTemplate.length) {
+        setPetition((prev) => prev + petitionTemplate[templateIndex]);
+        setTemplateIndex((prev) => prev + 1);
+      }
+    } else {
+      // mode normal
+      setPetition(value);
     }
   };
+
 
   const askPeter = (e) => {
     e.preventDefault();
@@ -102,7 +107,7 @@ function App() {
             animate={{ rotateX: 0, opacity: 1 }}
             transition={{ duration: 0.8 }}
           >
-            🤖
+            Albi
           </motion.span>
 
           <motion.span
@@ -156,9 +161,8 @@ function App() {
           <input
             type="text"
             value={petition}
-            onChange={(e) => setPetition(e.target.value)}
-            onKeyDown={handlePetitionKeyDown}
-            placeholder="Ketik permintaanmu boy..."
+            onInput={handlePetitionInput}
+            placeholder="Ketik permintaan..."
             className="flex-1 bg-transparent focus:outline-none text-base sm:text-lg md:text-lg pl-8 z-10"
           />
         </motion.div>
@@ -174,8 +178,7 @@ function App() {
             type="text"
             value={question}
             onChange={(e) => setQuestion(e.target.value)}
-            onKeyDown={handlePetitionKeyDown}
-            placeholder="Ketik pertanyaanmu boy..."
+            placeholder="Ketik pertanyaan..."
             className="flex-1 bg-transparent focus:outline-none text-base sm:text-lg md:text-lg pl-8 z-10"
           />
         </motion.div>
