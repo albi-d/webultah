@@ -121,7 +121,7 @@ function App() {
 
         <motion.div
           key={answer}
-          className="mt-6 text-sm sm:text-xl md:text-2xl text-center raleway"
+          className="mt-6 text-base sm:text-xl md:text-2xl text-center raleway"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
