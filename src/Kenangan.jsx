@@ -72,7 +72,7 @@ export default function Kenangan() {
                     <section>
                         <h1 className=" text-xl mb-1.5 text-center">2022</h1>
                         <div className="flex flex-wrap justify-center gap-4">
-                            {[...Array(8)].map((_, i) => (
+                            {[...Array(10)].map((_, i) => (
                                 <motion.div
                                     key={i}
                                     initial={{ opacity: 0, scale: 0.9 }}
@@ -82,7 +82,7 @@ export default function Kenangan() {
                                     className="relative w-[calc(50%-0.5rem)] sm:w-[calc(33.333%-0.5rem)] md:w-[calc(25%-0.5rem)] aspect-square overflow-hidden rounded-2xl shadow-lg group"
                                 >
                                     <img
-                                        src={`image/foto${i + 1}.jpeg`}
+                                        src={`image/foto22.${i + 1}.jpeg`}
                                         alt={`Foto ${i + 1}`}
                                         className="w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-110"
                                     />
