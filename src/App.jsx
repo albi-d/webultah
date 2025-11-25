@@ -6,6 +6,8 @@ import ButtonCircleQuestion from "./components/ButtonCircleQuestion";
 import NavbarToggle from "./components/NavbarToggle";
 import Navbar from "./components/Navbar";
 import CaraBermain from "./components/CaraBermain";
+import Lottie from "lottie-react";
+import loadingAnim from "./assets/Panning Dot Loading.json"
 
 function App() {
   const [isOpen, setIsOpen] = useState(false);
@@ -15,6 +17,7 @@ function App() {
   const [petition, setPetition] = useState("");
   const [question, setQuestion] = useState("");
   const [answer, setAnswer] = useState("");
+  const [loading, setLoading] = useState(false);
 
   const [secretAnswer, setSecretAnswer] = useState("");
   const [secretMode, setSecretMode] = useState(false);
@@ -54,20 +57,32 @@ function App() {
 
   const askPeter = (e) => {
     e.preventDefault();
-    if (secretAnswer !== "") {
-      setAnswer(secretAnswer);
-    } else if (petition !== "") {
-      setAnswer("Permintaan nya salah ya sayangg.");
-    } else {
-      setAnswer("Isi dulu dong sayangg.");
-    }
 
-    setSecretAnswer("");
-    setSecretMode(false);
-    setTemplateIndex(0);
-    setPetition("");
-    setQuestion("");
+    // mulai loading
+    setLoading(true);
+    setAnswer(""); // kosongkan jawaban dulu
+
+    setTimeout(() => {
+      // setelah delay, baru tampilkan jawaban
+      if (secretAnswer !== "") {
+        setAnswer(secretAnswer);
+      } else if (petition !== "") {
+        setAnswer("Permintaan nya salah ya sayangg.");
+      } else {
+        setAnswer("Isi dulu dong sayangg.");
+      }
+
+      setLoading(false); // selesai loading
+
+      // reset lainnya
+      setSecretAnswer("");
+      setSecretMode(false);
+      setTemplateIndex(0);
+      setPetition("");
+      setQuestion("");
+    }, 1000); // delay 1 detik (bisa diganti)
   };
+
 
   return (
     <div className="min-h-screen min-w-screen h-screen w-screen text-neutral-100 flex flex-col items-center justify-center relative overflow-hidden bg-neutral-800">
@@ -86,7 +101,7 @@ function App() {
         <NavbarToggle isOpen={isOpen} setIsOpen={setIsOpen} />
 
         <motion.h1
-          className="flex justify-center items-center text-2xl sm:text-3xl md:text-4xl text-neutral-100 overflow-hidden w-full"
+          className="flex justify-center items-center text-2xl sm:text-3xl md:text-4xl text-neutral-100 overflow-hidden w-full absolute top-17 sm:top-14 md:top-12"
           style={{ textShadow: "2px 2px 6px rgba(0,0,0,0.5)" }}
           initial={{ opacity: 0, y: -30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -119,15 +134,21 @@ function App() {
           </motion.span>
         </motion.h1>
 
-        <motion.div
-          key={answer}
-          className="mt-6 text-base sm:text-xl md:text-2xl text-center raleway"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-        >
-          {answer}
-        </motion.div>
+        {loading ? (
+          <motion.div className="loading w-16 md:w-20 mt-20">
+            <Lottie animationData={loadingAnim} loop={true} />
+          </motion.div>
+        ) : (
+          <motion.div
+            key={answer}
+            className="mt-20 text-base sm:text-xl md:text-2xl text-center raleway"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+          >
+            {answer}
+          </motion.div>
+        )}
 
         <motion.img
           src={wave}
