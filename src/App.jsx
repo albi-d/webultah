@@ -93,7 +93,7 @@ function App() {
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
           <motion.img
-            src="./catbutt.svg"
+            src="./iconlove.svg"
             alt="Logo CatButt"
             className="size-10 sm:size-12 md:size-15 mr-2"
             initial={{ opacity: 0, x: -40 }}

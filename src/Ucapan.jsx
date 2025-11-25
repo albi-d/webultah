@@ -81,12 +81,14 @@ export default function Ucapan() {
                         />
 
                         {/* Paragraf pertama */}
-                        <p className="text-neutral-400 text-xs sm:text-sm md:text-base raleway text-justify leading-5 md:leading-6 mb-3">
-                            Selamat ulang tahun sayangku ❤️ Hari ini adalah hari
-                            yang spesial karena di tanggal ini Tuhan menghadirkan
-                            seseorang yang begitu berharga dalam hidupku, yaitu kamu.
-                            Aku bersyukur setiap hari bisa mengenalmu, bisa mencintaimu,
-                            dan bisa berbagi cerita denganmu.
+                        <p className="text-neutral-300 text-xs sm:text-sm md:text-base raleway text-justify leading-5 md:leading-6 mb-4">
+                            <span className=" font-bold">Selamat ulang tahun sayangku ❤️</span> Hari ini adalah hari
+                            yang spesial u karena di tanggal ini Allah menghadirkan
+                            seseorang yang begitu berharga dalam hidupku, yaitu ipitt.
+                            Awak bersyukur setiap hari bisa mengenal u, bisa sayang sama u.
+                            Awak berharap di hari ulang tahun u ini u jadi pribadi yang lebih baik lagi,
+                            semua keinginan nya tercapai, dijauhkan dari emosi negatif,
+                            dijauhkan dari maksiat, dan dijauhkan dari hal-hal yang ga diinginkan, Amiiinn.
                         </p>
 
                         {/* Gambar kedua di kiri */}
@@ -106,13 +108,16 @@ export default function Ucapan() {
                         />
 
                         {/* Paragraf kedua */}
-                        <p className="text-neutral-400 text-xs sm:text-sm md:text-base raleway text-justify leading-5 md:leading-6">
-                            Terima kasih sudah selalu ada untukku, mengerti aku dalam
+                        <p className="text-neutral-300 text-xs sm:text-sm md:text-base raleway text-justify leading-5 md:leading-6">
+                            Terima kasih sudah selalu ada untuk awak, mengerti awak dalam
                             keadaan apa pun, dan mau berjalan bersama di setiap langkah.
-                            Doaku, semoga semua impianmu tercapai, panjang umur, sehat
+                            Awak sadar awak belum sempurna untuk u, dan ingin menjadi yang lebih baik kedepannya.
+                            Mungkin hadiah ulang tahun awak ga seberapa awak minta maaff yaa,
+                            hanya ini yang bisa awak kasihh, semoga u suka.
+                            Doa awak, semoga semua impian u tercapai, panjang umur, sehat
                             selalu, dilimpahi kebahagiaan, dan dikelilingi cinta yang
-                            tulus. Ingat ya, aku selalu ada di sampingmu, mendukungmu,
-                            dan mencintaimu lebih dari yang bisa kuucapkan. Happy
+                            tulus. Ingat ya, awak selalu ada di samping u, mendukung u,
+                            dan mencintai u lebih dari yang bisa awak ucapkan. Happy
                             birthday, my love. You deserve all the happiness in the
                             world ✨💖.
                         </p>
