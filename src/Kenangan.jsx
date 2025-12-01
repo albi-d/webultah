@@ -96,6 +96,54 @@ export default function Kenangan() {
                     <section>
                         <h1 className=" text-xl mb-1.5 text-center">2023</h1>
                         <div className="flex flex-wrap justify-center gap-4">
+                            {[...Array(10)].map((_, i) => (
+                                <motion.div
+                                    key={i}
+                                    initial={{ opacity: 0, scale: 0.9 }}
+                                    whileInView={{ opacity: 1, scale: 1 }}
+                                    transition={{ duration: 0.8, delay: 0 }}
+                                    viewport={{ once: true, amount: 0.2 }}
+                                    className="relative w-[calc(50%-0.5rem)] sm:w-[calc(33.333%-0.5rem)] md:w-[calc(25%-0.5rem)] aspect-square overflow-hidden rounded-2xl shadow-lg group"
+                                >
+                                    <img
+                                        src={`image/foto23.${i + 1}.jpeg`}
+                                        alt={`Foto ${i + 1}`}
+                                        className="w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-110"
+                                    />
+                                    <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 flex items-center justify-center text-white text-sm raleway font-medium transition-opacity duration-300">
+                                        Klik untuk buka
+                                    </div>
+                                </motion.div>
+                            ))}
+                        </div>
+                    </section>
+                    <section>
+                        <h1 className=" text-xl mb-1.5 text-center">2024</h1>
+                        <div className="flex flex-wrap justify-center gap-4">
+                            {[...Array(6)].map((_, i) => (
+                                <motion.div
+                                    key={i}
+                                    initial={{ opacity: 0, scale: 0.9 }}
+                                    whileInView={{ opacity: 1, scale: 1 }}
+                                    transition={{ duration: 0.8, delay: 0 }}
+                                    viewport={{ once: true, amount: 0.2 }}
+                                    className="relative w-[calc(50%-0.5rem)] sm:w-[calc(33.333%-0.5rem)] md:w-[calc(25%-0.5rem)] aspect-square overflow-hidden rounded-2xl shadow-lg group"
+                                >
+                                    <img
+                                        src={`image/24.${i + 1}.jpeg`}
+                                        alt={`Foto ${i + 1}`}
+                                        className="w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-110"
+                                    />
+                                    <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 flex items-center justify-center text-white text-sm raleway font-medium transition-opacity duration-300">
+                                        Klik untuk buka
+                                    </div>
+                                </motion.div>
+                            ))}
+                        </div>
+                    </section>
+                    <section>
+                        <h1 className=" text-xl mb-1.5 text-center">2025</h1>
+                        <div className="flex flex-wrap justify-center gap-4">
                             {[...Array(8)].map((_, i) => (
                                 <motion.div
                                     key={i}
@@ -106,7 +154,7 @@ export default function Kenangan() {
                                     className="relative w-[calc(50%-0.5rem)] sm:w-[calc(33.333%-0.5rem)] md:w-[calc(25%-0.5rem)] aspect-square overflow-hidden rounded-2xl shadow-lg group"
                                 >
                                     <img
-                                        src={`image/foto${i + 1}.jpeg`}
+                                        src={`image/foto25.${i + 1}.jpeg`}
                                         alt={`Foto ${i + 1}`}
                                         className="w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-110"
                                     />
